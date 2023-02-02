@@ -76,5 +76,5 @@ jobs:
           chmod 600 ~/.ssh/known_hosts
 
       # Finally deploy the artifacts
-      #- name: Deploy with rsync
-      #  run: rsync -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/nspawn.key" -auvzP /srv/www/nspawn.org/public/storage/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nspawn.org/public/storage/
+      - name: Deploy with rsync
+        run: rsync -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/nspawn.key" -auvzP /srv/www/nspawn.org/public/storage/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_IMAGE_DEST }}
