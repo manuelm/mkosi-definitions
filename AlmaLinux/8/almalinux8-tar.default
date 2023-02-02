@@ -1,18 +1,17 @@
 [Distribution]
-Distribution=alma_epel
+Distribution=alma
 Release=8
 
 [Output]
 Format=tar
 Bootable=no
 Hostname=almalinux8
-Output=/srv/www/nspawn.org/public/storage/almalinux/8/tar/image.tar.xz
+Output=/srv/www/nspawn.org/public/storage/almalinux/8/tar/image.tar
 CompressOutput=xz
 
 [Validation]
 Sign=yes
-Key=9E31BD4963FC2D19815FA7180E2A1E4B25A425F6
-Password=root
+Key=9A27F53015187F17710F6BB42E0A729D5BAFA985
 
 [Content]
 Packages=
@@ -21,4 +20,3 @@ Packages=
   iproute
   iputils
 PostInstallationScript=almalinux.postinst
-NSpawnSettings=almalinux.nspawn
