@@ -19,8 +19,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      
-      # Check duplictaed outputs
+
       - name: Check for duplicated Output directives
         run: |
           chmod +x ./validate_directories.sh
@@ -49,7 +48,7 @@ jobs:
 
       - name: Change ownership of files for checkout
         run: sudo chown -R $USER:$USER /home/runner/work/mkosi-definitions
-        
+
       # Clean newly created directories to avoid the build.sh script tryting to iterate them
       - uses: actions/checkout@v2
 
@@ -60,7 +59,7 @@ jobs:
           sudo ./build.sh
           sudo ./clean-artifacts.sh
 
-        # Prepare everything for syncing
+      # Prepare everything for syncing
       - name: Install SSH Key
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

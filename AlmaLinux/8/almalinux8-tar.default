@@ -11,7 +11,6 @@ CompressOutput=xz
 
 [Validation]
 Sign=yes
-Key=9A27F53015187F17710F6BB42E0A729D5BAFA985
 
 [Content]
 Packages=
